@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love</title>
+    <link rel="stylesheet" href="css/love.css">
+</head>
+
+<body>
+
+
+    <audio id="audios" loop preload="auto">
+        <source src="MP3/1.mp3" />
+    </audio>
+
+    <div class="container">
+        <div class="body_left">
+            <img src="images/biubiubiu.gif">
+        </div>
+
+        <div class="body_center love">
+            <div class="text-love">I Love You</div>
+            <div class="heart" id="heart"></div>
+        </div>
+    </div>
+
+    <script src="js/love.js"></script>
+
+
+    <script>
+        document.addEventListener("click", function () {
+            const audio = document.getElementById("audios");
+            audio.play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>
