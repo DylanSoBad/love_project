@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    background: white;
+    overflow: hidden;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.body_left {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+
+.body_left img {
+    width: 120px;
+}
+
+.body_center {
+    text-align: center;
+}
+
+.text-love {
+    font-size: 40px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.heart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
