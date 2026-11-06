@@ -1,38 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Love</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love — #by dylan</title>
     <link rel="stylesheet" href="css/love.css">
 </head>
 
 <body>
-
-
     <audio id="audios" loop preload="auto">
-        <source src="MP3/damchim.mp3" />
+        <source src="MP3/damchim.mp3" type="audio/mpeg" />
+        <source src="damchim.mp3" type="audio/mpeg" />
     </audio>
 
+    <!-- Nền sao & đom đóm lung linh -->
+    <div class="bg-sparkles" id="bg-sparkles" aria-hidden="true"></div>
+
+    <!-- Nút bật/tắt nhạc nền -->
+    <button type="button" class="music-btn" id="music-toggle" aria-label="Bật hoặc tắt nhạc nền" aria-pressed="false">
+        <span class="music-icon" aria-hidden="true">🎵</span>
+        <span class="music-label" id="music-label">Chạm để phát nhạc</span>
+        <span class="equalizer" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </span>
+    </button>
+
     <div class="container">
-        <div class="body_left">
-            <img src="images/biubiubiu.gif">
+        <div class="body_left" id="shooter">
+            <div class="speech-bubble">#by dylan~ 💘</div>
+            <img src="images/biubiubiu.gif" alt="Cute mascot shooting hearts" class="mascot-img"
+                 onerror="this.hidden=true; document.getElementById('mascot-svg').hidden=false;">
+            <!-- Mascot SVG dự phòng khi chưa có file images/biubiubiu.gif -->
+            <svg id="mascot-svg" class="mascot-svg" hidden viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" aria-label="Cute mascot shooting hearts">
+                <defs>
+                    <radialGradient id="blush" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0.7"/>
+                        <stop offset="100%" stop-color="#ff6b9d" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <!-- Tai gấu/thỏ dễ thương -->
+                <circle cx="42" cy="36" r="16" fill="#fff0f5" stroke="#ff8da1" stroke-width="3"/>
+                <circle cx="42" cy="36" r="8" fill="#ffb6c1"/>
+                <circle cx="94" cy="36" r="16" fill="#fff0f5" stroke="#ff8da1" stroke-width="3"/>
+                <circle cx="94" cy="36" r="8" fill="#ffb6c1"/>
+                <!-- Thân & đầu -->
+                <ellipse cx="68" cy="105" rx="30" ry="24" fill="#fff0f5" stroke="#ff8da1" stroke-width="3"/>
+                <circle cx="68" cy="68" r="36" fill="#fff0f5" stroke="#ff8da1" stroke-width="3"/>
+                <!-- Má hồng -->
+                <circle cx="46" cy="74" r="9" fill="url(#blush)"/>
+                <circle cx="90" cy="74" r="9" fill="url(#blush)"/>
+                <!-- Mắt long lanh -->
+                <circle cx="54" cy="64" r="4.5" fill="#3a1c2e"/>
+                <circle cx="52.5" cy="62.5" r="1.5" fill="#ffffff"/>
+                <circle cx="82" cy="64" r="4.5" fill="#3a1c2e"/>
+                <circle cx="80.5" cy="62.5" r="1.5" fill="#ffffff"/>
+                <!-- Miệng cười -->
+                <path d="M 62 73 Q 68 79 74 73" fill="none" stroke="#3a1c2e" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Tay bắn tim -->
+                <ellipse cx="98" cy="94" rx="12" ry="8" transform="rotate(-20 98 94)" fill="#fff0f5" stroke="#ff8da1" stroke-width="3"/>
+                <!-- Trái tim nhỏ trên tay -->
+                <path class="mini-hand-heart" d="M 116 80 C 112 73, 102 75, 106 84 C 109 90, 116 94, 116 94 C 116 94, 123 90, 126 84 C 130 75, 120 73, 116 80 Z" fill="#ff2a6d"/>
+            </svg>
         </div>
 
         <div class="body_center love">
-            <div class="text-love">#by dylan</div>
-            <div class="heart" id="heart"></div>
+            <div class="heart-wrapper">
+                <div class="heart-glow" aria-hidden="true"></div>
+                <div class="heart" id="heart">
+                    <div class="heart-center-content">
+                        <div class="text-love">#by dylan</div>
+                        <div class="text-sub">Forever &amp; Always ✨</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="js/love.js"></script>
-
-
-    <script>
-        document.addEventListener("click", function () {
-            const audio = document.getElementById("audios");
-            audio.play();
-        }, { once: true });
-    </script>
-
 </body>
 </html>
